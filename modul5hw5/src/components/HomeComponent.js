@@ -1,4 +1,7 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
+const topBarCategories = ["Registration", "Game", "Cars", "Test"];
 
 export class HomeComponent extends React.Component {
     constructor(props){
@@ -6,11 +9,10 @@ export class HomeComponent extends React.Component {
     }
 
     render(){
-
         return <div class="Top-bar">
-            <div>Register</div>
-            <div>Game</div>
-            <div>Cars</div>
+                {
+                    topBarCategories.map(x => <Link to={`${x}`}>{`${x}`}</Link>)
+                }
             </div>
     }
 }
